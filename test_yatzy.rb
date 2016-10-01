@@ -5,6 +5,18 @@ require_relative 'yatzy'
 
 class YatzyTest < MiniTest::Unit::TestCase
   def test_score
+    assert_raises ArgumentError do
+      Yatzy.score(2,2,2, "yatzy")
+    end
+
+    assert_raises ArgumentError do
+      Yatzy.score(2,2,2,2,1,6,7, "chance")
+    end
+
+    assert_raises ArgumentError do
+      Yatzy.score(2,2,2,2,2, "one_hundred_points_please")
+    end
+
     assert_equal 50, Yatzy.score(4,4,4,4,4,"yatzy")
     assert_equal 50, Yatzy.score(6,6,6,6,6,"yatzy")
 
