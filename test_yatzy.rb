@@ -19,6 +19,7 @@ class YatzyTest < MiniTest::Unit::TestCase
 
     assert_equal 50, Yatzy.score(4,4,4,4,4,"yatzy")
     assert_equal 50, Yatzy.score(6,6,6,6,6,"yatzy")
+    assert_equal 0, Yatzy.score(1,2,3,4,5,"yatzy")
 
     assert_equal 15, Yatzy.score(2,3,4,5,1,"chance")
     assert_equal 15, Yatzy.score(2,3,4,5,1,"chance")
